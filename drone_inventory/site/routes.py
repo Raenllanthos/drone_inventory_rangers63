@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from flask_login.utils import login_required
 """
     Some arguments are specified when creating the Blueprint object.
     The first argument "site", is the blueprint name,
@@ -15,5 +16,6 @@ def index():
     return render_template("index.html")
 
 @site.route("/profile")
+@login_required
 def profile():
     return render_template("profile.html")

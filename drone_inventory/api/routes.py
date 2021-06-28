@@ -2,6 +2,7 @@ from flask import Blueprint, request,jsonify
 from flask_migrate import current
 from drone_inventory.helpers import token_required
 from drone_inventory.models import db,User, Drone,drone_schema, drones_schema
+
 api = Blueprint("api", __name__, url_prefix="/api")
 
 @api.route("/getdata")
